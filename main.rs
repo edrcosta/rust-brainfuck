@@ -14,7 +14,7 @@ fn main(){
     computer_ui(1);
         
     let mut memory: [i32; 32] = [0; 32]; // 32 bits of computer memory 
-    let mut pointer: i32 = 0;
+    let mut pointer: i32 = 0; // memory pointer 
 
     // Creating a mutable string to store a command
     let mut line = String::new();    
@@ -27,15 +27,14 @@ fn main(){
     
     // run by all chars in the code
     for s in operand_array {
-        
         if s == ">" {
-            pointer+=1;
+            pointer+=1; // decrement mutable pointer 
         } else if s == "<" {
-            pointer-=1;
+            pointer-=1; // increment mutable pointer 
         } else if s == "+" {
-            memory[pointer as usize]+=1;
+            memory[pointer as usize]+=1; // memory[pointer]++
         } else if s == "-" {
-            memory[pointer as usize]-=1;
+            memory[pointer as usize]-=1; // memory[pointer]--
         } else if s == "[" {
             println!("start loop");
         } else if s == "]" {
